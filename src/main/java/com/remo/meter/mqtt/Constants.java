@@ -1,4 +1,4 @@
-package com.remo.us;
+package com.remo.meter.mqtt;
 
 public class Constants {
 	public static final String TOPIC = "balajivignesh258/feeds/readingfeed";

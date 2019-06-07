@@ -1,4 +1,4 @@
-package com.remo.us;
+package com.remo.meter.mqtt;
 
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
