@@ -3,6 +3,7 @@ package com.remo.meter.webservice;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,7 +43,7 @@ public class Util extends WebUtil {
 			prop.load(new FileInputStream(file));
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("version", prop.getProperty("version"));
-			processReturn(httpresponse, 0, "application/json", jsonObject.toString());
+			processReturn(httpresponse, 0, "application/json", (new Random()).nextInt() + "");//jsonObject.toString());
 		} catch (Exception e) {
 			logger.error(e.getLocalizedMessage(), e);
 			processReturn(httpresponse, 0, "application/json", "1.0");
