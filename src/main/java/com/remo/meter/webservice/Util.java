@@ -43,7 +43,8 @@ public class Util extends WebUtil {
 			prop.load(new FileInputStream(file));
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("version", prop.getProperty("version"));
-			processReturn(httpresponse, 0, "application/json", (new Random()).nextInt() + "");//jsonObject.toString());
+			Random r = new Random();
+			processReturn(httpresponse, 0, "application/json", (r.nextInt((100 - 1) + 1) + 1) + "");// jsonObject.toString());
 		} catch (Exception e) {
 			logger.error(e.getLocalizedMessage(), e);
 			processReturn(httpresponse, 0, "application/json", "1.0");
