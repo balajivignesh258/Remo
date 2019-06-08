@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Hello WebSocket</title>
+<title>Remo - Remote Monitoring</title>
 <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/main.css" rel="stylesheet">
 <script src="/webjars/jquery/jquery.min.js"></script>
@@ -30,8 +30,8 @@
 			<div class="col-md-6">
 				<form class="form-inline">
 					<div class="form-group">
-						<label for="name">What is your name?</label> <input type="text"
-							id="name" class="form-control" placeholder="Your name here...">
+						<label for="formula">Formula : </label> <input type="text"
+							id="formula" class="form-control" placeholder="Enter a formula">
 					</div>
 					<button id="send" class="btn btn-default" type="submit">Send</button>
 				</form>
@@ -42,10 +42,10 @@
 				<table id="conversation" class="table table-striped">
 					<thead>
 						<tr>
-							<th>Raw readings</th>
+							<th>Monitor</th>
 						</tr>
 					</thead>
-					<tbody id="greetings">
+					<tbody id="monitor">
 					</tbody>
 				</table>
 			</div>

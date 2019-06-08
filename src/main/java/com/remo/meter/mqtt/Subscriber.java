@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
-import com.remo.meter.webservice.model.request.Greeting;
+import com.remo.meter.webservice.model.request.EvalResult;
 
 @Service
 public class Subscriber extends Util implements MqttCallback {
@@ -39,7 +39,7 @@ public class Subscriber extends Util implements MqttCallback {
 	@Override
 	public void messageArrived(String topic, MqttMessage message) throws Exception {
 		System.out.println(String.format("[%s] %s", topic, new String(message.getPayload())));
-		this.template.convertAndSend("/topic/greetings", new Greeting(new String(message.getPayload())));
+		this.template.convertAndSend("/topic/evalresult", new EvalResult(new String(message.getPayload())));
 	}
 
 	@Override
