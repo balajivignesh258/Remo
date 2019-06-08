@@ -22,7 +22,5 @@ public class RemoController {
 	public void setFormula(CustomFormulaRequest customFormula) {
 		formulaService.setCustomFormula(customFormula.getFormula());
 		System.out.println("Formula : " + customFormula.getFormula());
-
 	}
-
 }

@@ -35,6 +35,16 @@ function sendFormula() {
 	stompClient.send("/app/formula", {}, JSON.stringify({
 		'formula' : $("#formula").val()
 	}));
+	showAlert();
+	setTimeout(hideAlert, 2000)
+}
+
+function hideAlert() {
+	$(".alert").hide()
+}
+
+function showAlert() {
+	$(".alert").show()
 }
 
 function showEvalResultValue(message) {
@@ -42,6 +52,7 @@ function showEvalResultValue(message) {
 }
 
 $(function() {
+	$(".alert").hide();
 	$("form").on('submit', function(e) {
 		e.preventDefault();
 	});

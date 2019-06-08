@@ -5,8 +5,10 @@
 <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/main.css" rel="stylesheet">
 <script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/webjars/sockjs-client/sockjs.min.js"></script>
 <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="/app.js"></script>
 </head>
 <body>
@@ -15,7 +17,14 @@
 			Javascript! Websocket relies on Javascript being enabled. Please
 			enable Javascript and reload this page!</h2>
 	</noscript>
+
 	<div id="main-content" class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="alert alert-success" role="alert">Formula has
+					been set successfully!</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<form class="form-inline">
