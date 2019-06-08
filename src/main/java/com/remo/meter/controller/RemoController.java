@@ -1,24 +1,28 @@
 package com.remo.meter.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.util.HtmlUtils;
 
-import com.remo.meter.webservice.model.request.EvalResult;
-import com.remo.meter.webservice.model.response.CustomFormula;
+import com.remo.meter.service.FormulaService;
+import com.remo.meter.webservice.model.response.CustomFormulaRequest;
 
 @Controller
 public class RemoController {
 
-	@SendTo("/topic/greetings")
-	public EvalResult greeting() throws Exception {
-		return new EvalResult("Hello, " + HtmlUtils.htmlEscape("some string") + "!");
-	}
+	@Autowired
+	private FormulaService formulaService;
+
+//	@SendTo("/topic/greetings")
+//	public EvalResult greeting() throws Exception {
+//		return new EvalResult("Hello, " + HtmlUtils.htmlEscape("some string") + "!");
+//	}
 
 	@MessageMapping("/formula")
-	public void setFormula(CustomFormula customFormula) {
+	public void setFormula(CustomFormulaRequest customFormula) {
+		formulaService.setCustomFormula(customFormula.getFormula());
 		System.out.println("Formula : " + customFormula.getFormula());
+
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.remo.meter.webservice.model.response;
 
-public class CustomFormula {
+public class CustomFormulaRequest {
 
 	private String formula;
 

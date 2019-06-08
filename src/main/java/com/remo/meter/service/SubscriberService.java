@@ -1,4 +1,7 @@
-package com.remo.meter.mqtt;
+package com.remo.meter.service;
+
+import java.math.BigDecimal;
+import java.util.Date;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
@@ -10,17 +13,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
+import com.remo.meter.util.Constants;
+import com.remo.meter.util.Util;
 import com.remo.meter.webservice.model.request.EvalResult;
+import com.udojava.evalex.Expression;
 
 @Service
-public class Subscriber extends Util implements MqttCallback {
+public class SubscriberService extends Util implements MqttCallback {
 
 	@Autowired
 	private SimpMessagingTemplate template;
 
+	@Autowired
+	private FormulaService formulaService;
+
 	MqttClient client = null;
 
-	public Subscriber() throws MqttException {
+	public SubscriberService() throws MqttException {
 		System.out.println("== START SUBSCRIBER ==");
 		client = new MqttClient(Constants.CONNECTION_URL, MqttClient.generateClientId());
 		MqttConnectOptions connOpts = Util.setUpConnectionOptions(Constants.USERNAME, Constants.PASSWORD);
@@ -39,7 +48,19 @@ public class Subscriber extends Util implements MqttCallback {
 	@Override
 	public void messageArrived(String topic, MqttMessage message) throws Exception {
 		System.out.println(String.format("[%s] %s", topic, new String(message.getPayload())));
-		this.template.convertAndSend("/topic/evalresult", new EvalResult(new String(message.getPayload())));
+
+		String responseMessage = "Exception";
+
+		try {
+			BigDecimal result = null;
+			result = new Expression(formulaService.getCustomFormula())
+					.with("raw", new BigDecimal(new String(message.getPayload()))).eval();
+			responseMessage = new Date() + " " + result;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		this.template.convertAndSend("/topic/evalresult", new EvalResult(responseMessage));
 	}
 
 	@Override

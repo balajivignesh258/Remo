@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+
 public class Util {
 	/**
 	 * Get the date string in the specified format.
@@ -21,7 +23,15 @@ public class Util {
 
 	}
 
-	private Util() {
+	public Util() {
 
+	}
+
+	public static MqttConnectOptions setUpConnectionOptions(String username, String password) {
+		MqttConnectOptions connOpts = new MqttConnectOptions();
+		connOpts.setCleanSession(true);
+		connOpts.setUserName(username);
+		connOpts.setPassword(password.toCharArray());
+		return connOpts;
 	}
 }
