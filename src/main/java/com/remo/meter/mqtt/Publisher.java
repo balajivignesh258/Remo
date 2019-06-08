@@ -5,7 +5,9 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.MqttPersistenceException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Publisher extends Util {
 
 	MqttClient client = null;

@@ -44,6 +44,7 @@ public class Util extends WebUtil {
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("version", prop.getProperty("version"));
 			Random r = new Random();
+
 			processReturn(httpresponse, 0, "application/json", (r.nextInt((100 - 1) + 1) + 1) + "");// jsonObject.toString());
 		} catch (Exception e) {
 			logger.error(e.getLocalizedMessage(), e);
