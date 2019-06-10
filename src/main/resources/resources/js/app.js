@@ -48,8 +48,10 @@ function showAlert() {
 }
 
 function showEvalResultValue(message) {
+	console.log(message)
 	$("#monitor").append("<tr><td>" + message + "</td></tr>");
-	$('#gauge').jqxLinearGauge('value', message);
+	$('#gauge').jqxLinearGauge('value', parseInt(message));
+	
 }
 
 $(function() {

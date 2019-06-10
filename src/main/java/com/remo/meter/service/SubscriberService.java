@@ -55,7 +55,7 @@ public class SubscriberService extends Util implements MqttCallback {
 			BigDecimal result = null;
 			result = new Expression(formulaService.getCustomFormula())
 					.with("raw", new BigDecimal(new String(message.getPayload()))).eval();
-			responseMessage = new Date() + "\t\t|\t\t" + result;
+			responseMessage = result+"";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
