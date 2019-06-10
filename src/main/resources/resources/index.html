@@ -3,13 +3,27 @@
 <head>
 <title>Remo - Remote Monitoring</title>
 <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="/main.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<link rel="stylesheet" href="css/cmGauge.css">
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/webjars/sockjs-client/sockjs.min.js"></script>
 <script src="/webjars/stomp-websocket/stomp.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="/app.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/cmGauge.js"></script>
+
+
+<link rel="stylesheet" href="/css/jqwidgets/jqx.base.css"
+	type="text/css" />
+<script type="text/javascript" src="/js/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="/js/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript" src="/js/jqwidgets/jqxexpander.js"></script>
+<script type="text/javascript" src="/js/jqwidgets/jqxdraw.js"></script>
+<script type="text/javascript" src="/js/jqwidgets/jqxgauge.js"></script>
+<script type="text/javascript" src="/js/jqwidgets/jqxslider.js"></script>
+
+
 </head>
 <body>
 	<noscript>
@@ -17,7 +31,6 @@
 			Javascript! Websocket relies on Javascript being enabled. Please
 			enable Javascript and reload this page!</h2>
 	</noscript>
-
 	<div id="main-content" class="container">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -40,7 +53,6 @@
 				</div>
 			</div>
 		</nav>
-
 		<div class="row">
 			<div class="col-md-12">
 				<div class="alert alert-success" role="alert">Formula has been
@@ -69,7 +81,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<table id="conversation" class="table table-striped">
 					<thead>
 						<tr>
@@ -77,6 +89,22 @@
 						</tr>
 					</thead>
 					<tbody id="monitor">
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<table id="conversation" class="table">
+					<thead>
+						<tr>
+							<th>Level</th>
+						</tr>
+					</thead>
+					<tbody id="monitor">
+						<tr>
+							<td>
+								<div id="gauge" style="margin-left: 20px; float: left;"></div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>

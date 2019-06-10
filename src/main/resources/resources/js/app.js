@@ -49,6 +49,7 @@ function showAlert() {
 
 function showEvalResultValue(message) {
 	$("#monitor").append("<tr><td>" + message + "</td></tr>");
+	$('#gauge').jqxLinearGauge('value', message);
 }
 
 $(function() {
@@ -65,4 +66,39 @@ $(function() {
 	$("#send").click(function() {
 		sendFormula();
 	});
+});
+
+$(document).ready(function() {
+	var majorTicks = {
+		size : '10%',
+		interval : 10
+	}, minorTicks = {
+		size : '5%',
+		interval : 2.5,
+		style : {
+			'stroke-width' : 1,
+			stroke : '#aaaaaa'
+		}
+	}, labels = {
+		interval : 20
+	};
+	$('#gauge').jqxLinearGauge({
+		orientation : 'vertical',
+		labels : labels,
+		ticksMajor : majorTicks,
+		ticksMinor : minorTicks,
+		max : 100,
+		min : 0,
+		value : 0,
+		pointer : {
+			size : '45%'
+		},
+		colorScheme : 'scheme05',
+		ranges : []
+	});
+
+	labels.position = 'near';
+	$('#gauge').jqxLinearGauge('labels', labels);
+	$('#gauge').jqxLinearGauge('ticksPosition', 'near');
+	$('#gauge').jqxLinearGauge('value', '0');
 });
