@@ -1,7 +1,6 @@
 package com.remo.meter.service;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
@@ -55,7 +54,7 @@ public class SubscriberService extends Util implements MqttCallback {
 			BigDecimal result = null;
 			result = new Expression(formulaService.getCustomFormula())
 					.with("raw", new BigDecimal(new String(message.getPayload()))).eval();
-			responseMessage = result+"";
+			responseMessage = result.intValue() + "";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

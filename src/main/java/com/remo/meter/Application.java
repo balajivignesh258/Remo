@@ -21,5 +21,6 @@ public class Application extends SpringBootServletInitializer {
 		BasicConfigurator.configure();
 		logger.info("Initializing application Remo");
 		SpringApplication.run(Application.class, args);
+
 	}
 }
