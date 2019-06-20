@@ -49,9 +49,10 @@ function showAlert() {
 
 function showEvalResultValue(message) {
 	console.log(message)
-	$("#monitor").append("<tr><td>" + message + "</td></tr>");
+	$("#monitor").empty();
+	$("#monitor").append("<tr><td><h1>" + message + "<h1></td></tr>");
 	$('#gauge').jqxLinearGauge('value', parseInt(message));
-	
+
 }
 
 $(function() {
@@ -85,17 +86,19 @@ $(document).ready(function() {
 		interval : 20
 	};
 	$('#gauge').jqxLinearGauge({
+		width : 200,
+		height : 500,
 		orientation : 'vertical',
 		labels : labels,
 		ticksMajor : majorTicks,
 		ticksMinor : minorTicks,
-		max : 100,
+		max : 400,
 		min : 0,
 		value : 0,
 		pointer : {
 			size : '45%'
 		},
-		colorScheme : 'scheme05',
+		colorScheme : 'scheme11',
 		ranges : []
 	});
 
