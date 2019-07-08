@@ -39,6 +39,14 @@ function sendFormula() {
 	setTimeout(hideAlert, 2000)
 }
 
+function sendUnit() {
+	stompClient.send("/app/unit", {}, JSON.stringify({
+		'unit' : $("#unitval").val()
+	}));
+	showAlert();
+	setTimeout(hideAlert, 2000)
+}
+
 function hideAlert() {
 	$(".alert").hide()
 }
@@ -50,7 +58,7 @@ function showAlert() {
 function showEvalResultValue(message) {
 	console.log(message)
 	$("#monitor").empty();
-	$("#monitor").append("<tr><td><h1>" + message + "<h1></td></tr>");
+	$("#monitor").append("<tr><td><h1>" + message + "</h1></td></tr>");
 	$('#gauge').jqxLinearGauge('value', parseInt(message));
 
 }
@@ -69,6 +77,9 @@ $(function() {
 	$("#send").click(function() {
 		sendFormula();
 	});
+	$("#unit").click(function() {
+		sendUnit();
+	});
 });
 
 $(document).ready(function() {
@@ -83,11 +94,11 @@ $(document).ready(function() {
 			stroke : '#aaaaaa'
 		}
 	}, labels = {
-		interval : 20
+		interval : 10
 	};
 	$('#gauge').jqxLinearGauge({
 		width : 200,
-		height : 500,
+		height : 700,
 		orientation : 'vertical',
 		labels : labels,
 		ticksMajor : majorTicks,

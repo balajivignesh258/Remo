@@ -69,6 +69,9 @@
 					</div>
 				</form>
 			</div>
+		</div>
+		<br>
+		<div class="row">
 			<div class="col-md-6">
 				<form class="form-inline">
 					<div class="form-group">
@@ -78,6 +81,16 @@
 					<button id="send" class="btn btn-default" type="submit">Send</button>
 				</form>
 			</div>
+			<div class="col-md-6">
+				<form class="form-inline">
+					<div class="form-group">
+						<label for="formula">Append : </label> <input type="text"
+							id="unitval" class="form-control"
+							placeholder="Enter the unit to append">
+					</div>
+					<button id="unit" class="btn btn-default" type="submit">Append</button>
+				</form>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
@@ -85,6 +98,9 @@
 					<thead>
 						<tr>
 							<th>Monitor</th>
+						</tr>
+						<tr>
+							<td><h1>0</h1></td>
 						</tr>
 					</thead>
 					<tbody id="monitor">

@@ -5,6 +5,7 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 
 import com.remo.meter.service.FormulaService;
+import com.remo.meter.webservice.model.response.AppendUnitRequest;
 import com.remo.meter.webservice.model.response.CustomFormulaRequest;
 
 @Controller
@@ -22,5 +23,11 @@ public class RemoController {
 	public void setFormula(CustomFormulaRequest customFormula) {
 		formulaService.setCustomFormula(customFormula.getFormula());
 		System.out.println("Formula : " + formulaService.getCustomFormula());
+	}
+
+	@MessageMapping("/unit")
+	public void setAppendUnit(AppendUnitRequest appendUnitRequest) {
+		formulaService.setAppendUnit(appendUnitRequest.getUnit());
+		System.out.println("Unit : " + formulaService.getAppendUnit());
 	}
 }
