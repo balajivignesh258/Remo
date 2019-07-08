@@ -29,12 +29,12 @@ public class SubscriberService extends Util implements MqttCallback {
 	MqttClient client = null;
 
 	public SubscriberService() throws MqttException {
-//		System.out.println("== START SUBSCRIBER ==");
-//		client = new MqttClient(Constants.CONNECTION_URL, MqttClient.generateClientId());
-//		MqttConnectOptions connOpts = Util.setUpConnectionOptions(Constants.USERNAME, Constants.PASSWORD);
-//		client.setCallback(this);
-//		client.connect(connOpts);
-//		client.subscribe(Constants.TOPIC);
+		System.out.println("== START SUBSCRIBER ==");
+		client = new MqttClient(Constants.CONNECTION_URL, MqttClient.generateClientId());
+		MqttConnectOptions connOpts = Util.setUpConnectionOptions(Constants.USERNAME, Constants.PASSWORD);
+		client.setCallback(this);
+		client.connect(connOpts);
+		client.subscribe(Constants.TOPIC);
 	}
 
 	@Override

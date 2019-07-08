@@ -6,7 +6,7 @@ function setConnected(connected) {
 	if (connected) {
 		$("#conversation").show();
 	} else {
-		//$("#conversation").hide();
+		// $("#conversation").hide();
 	}
 	$("#greetings").html("");
 }
@@ -66,7 +66,9 @@ function showAlert() {
 function showEvalResultValue(message) {
 	console.log(message)
 	$("#monitor").empty();
-	$("#monitor").append("<tr><td><h1>" + message + "</h1></td></tr>");
+	$("#monitor").append(
+			"<tr><td><h1><font color='lightgrey'>" + message
+					+ "</font></h1></td></tr>");
 	$('#gauge').jqxLinearGauge('value', parseInt(message));
 
 }
