@@ -44,9 +44,10 @@
 				</div>
 				<div id="navbar5" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
+						<li class="" data-toggle="modal" data-target="#formulaModal"><a
+							href="#">Formula</a></li>
+						<li class="" data-toggle="modal" data-target="#aboutModal"><a
+							href="#">About</a></li>
 					</ul>
 				</div>
 			</div>
@@ -106,6 +107,387 @@
 						</tr>
 					</tbody>
 				</table>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="formulaModal" tabindex="-1" role="dialog"
+		aria-labelledby="formulaModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="formulaModalLabel">Formula guide</h3>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="table table-striped">
+						<tbody>
+							<tr>
+								<th>Mathematical Operators</th>
+							</tr>
+							<tr>
+								<th>Operator</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td>+</td>
+								<td>Additive operator / Unary plus</td>
+							</tr>
+							<tr>
+								<td>-</td>
+								<td>Subtraction operator / Unary minus</td>
+							</tr>
+							<tr>
+								<td>*</td>
+								<td>Multiplication operator, can be omitted in front of an
+									open bracket</td>
+							</tr>
+							<tr>
+								<td>/</td>
+								<td>Division operator</td>
+							</tr>
+							<tr>
+								<td>%</td>
+								<td>Remainder operator (Modulo)</td>
+							</tr>
+							<tr>
+								<td>^</td>
+								<td>Power operator</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table table-striped">
+						<tbody>
+							<tr>
+								<th>Boolean Operators</th>
+							</tr>
+							<tr>
+								<th>Operator</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td>=</td>
+								<td>Equals</td>
+							</tr>
+							<tr>
+								<td>==</td>
+								<td>Equals</td>
+							</tr>
+							<tr>
+								<td>!=</td>
+								<td>Not equals</td>
+							</tr>
+							<tr>
+								<td>&lt;&gt;</td>
+								<td>Not equals</td>
+							</tr>
+							<tr>
+								<td>&lt;</td>
+								<td>Less than</td>
+							</tr>
+							<tr>
+								<td>&lt;=</td>
+								<td>Less than or equal to</td>
+							</tr>
+							<tr>
+								<td>&gt;</td>
+								<td>Greater than</td>
+							</tr>
+							<tr>
+								<td>&gt;=</td>
+								<td>Greater than or equal to</td>
+							</tr>
+							<tr>
+								<td>&amp;&amp;</td>
+								<td>Boolean and</td>
+							</tr>
+							<tr>
+								<td>||</td>
+								<td>Boolean or</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table table-striped">
+						<tbody>
+							<tr>
+								<th>Function</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td>NOT(<i>expression</i>)
+								</td>
+								<td>Boolean negation, 1 (means true) if the expression is
+									not zero</td>
+							</tr>
+							<tr>
+								<td>IF(<i>condition</i>,<i>value_if_true</i>,<i>value_if_false</i>)
+								</td>
+								<td>Returns one value if the condition evaluates to true or
+									the other if it evaluates to false</td>
+							</tr>
+							<tr>
+								<td>RANDOM()</td>
+								<td>Produces a random number between 0 and 1</td>
+							</tr>
+							<tr>
+								<td>MIN(<i>e1</i>,<i>e2</i>, <i>...</i>)
+								</td>
+								<td>Returns the smallest of the given expressions</td>
+							</tr>
+							<tr>
+								<td>MAX(<i>e1</i>,<i>e2</i>, <i>...</i>)
+								</td>
+								<td>Returns the biggest of the given expressions</td>
+							</tr>
+							<tr>
+								<td>ABS(<i>expression</i>)
+								</td>
+								<td>Returns the absolute (non-negative) value of the
+									expression</td>
+							</tr>
+							<tr>
+								<td>ROUND(<i>expression</i>,precision)
+								</td>
+								<td>Rounds a value to a certain number of digits, uses the
+									current rounding mode</td>
+							</tr>
+							<tr>
+								<td>FLOOR(<i>expression</i>)
+								</td>
+								<td>Rounds the value down to the nearest integer</td>
+							</tr>
+							<tr>
+								<td>CEILING(<i>expression</i>)
+								</td>
+								<td>Rounds the value up to the nearest integer</td>
+							</tr>
+							<tr>
+								<td>LOG(<i>expression</i>)
+								</td>
+								<td>Returns the natural logarithm (base e) of an expression</td>
+							</tr>
+							<tr>
+								<td>LOG10(<i>expression</i>)
+								</td>
+								<td>Returns the common logarithm (base 10) of an expression</td>
+							</tr>
+							<tr>
+								<td>SQRT(<i>expression</i>)
+								</td>
+								<td>Returns the square root of an expression</td>
+							</tr>
+							<tr>
+								<td>SIN(<i>expression</i>)
+								</td>
+								<td>Returns the trigonometric sine of an angle (in degrees)</td>
+							</tr>
+							<tr>
+								<td>COS(<i>expression</i>)
+								</td>
+								<td>Returns the trigonometric cosine of an angle (in
+									degrees)</td>
+							</tr>
+							<tr>
+								<td>TAN(<i>expression</i>)
+								</td>
+								<td>Returns the trigonometric tangens of an angle (in
+									degrees)</td>
+							</tr>
+							<tr>
+								<td>COT(<i>expression</i>)
+								</td>
+								<td>Returns the trigonometric cotangens of an angle (in
+									degrees)</td>
+							</tr>
+							<tr>
+								<td>ASIN(<i>expression</i>)
+								</td>
+								<td>Returns the angle of asin (in degrees)</td>
+							</tr>
+							<tr>
+								<td>ACOS(<i>expression</i>)
+								</td>
+								<td>Returns the angle of acos (in degrees)</td>
+							</tr>
+							<tr>
+								<td>ATAN(<i>expression</i>)
+								</td>
+								<td>Returns the angle of atan (in degrees)</td>
+							</tr>
+							<tr>
+								<td>ACOT(<i>expression</i>)
+								</td>
+								<td>Returns the angle of acot (in degrees)</td>
+							</tr>
+							<tr>
+								<td>ATAN2(<i>y</i>,<i>x</i>)
+								</td>
+								<td>Returns the angle of atan2 (in degrees)</td>
+							</tr>
+							<tr>
+								<td>SINH(<i>expression</i>)
+								</td>
+								<td>Returns the hyperbolic sine of a value</td>
+							</tr>
+							<tr>
+								<td>COSH(<i>expression</i>)
+								</td>
+								<td>Returns the hyperbolic cosine of a value</td>
+							</tr>
+							<tr>
+								<td>TANH(<i>expression</i>)
+								</td>
+								<td>Returns the hyperbolic tangens of a value</td>
+							</tr>
+							<tr>
+								<td>COTH(<i>expression</i>)
+								</td>
+								<td>Returns the hyperbolic cotangens of a value</td>
+							</tr>
+							<tr>
+								<td>SEC(<i>expression</i>)
+								</td>
+								<td>Returns the secant (in degrees)</td>
+							</tr>
+							<tr>
+								<td>CSC(<i>expression</i>)
+								</td>
+								<td>Returns the cosecant (in degrees)</td>
+							</tr>
+							<tr>
+								<td>SECH(<i>expression</i>)
+								</td>
+								<td>Returns the hyperbolic secant (in degrees)</td>
+							</tr>
+							<tr>
+								<td>CSCH(<i>expression</i>)
+								</td>
+								<td>Returns the hyperbolic cosecant (in degrees)</td>
+							</tr>
+							<tr>
+								<td>ASINH(<i>expression</i>)
+								</td>
+								<td>Returns the angle of hyperbolic sine (in degrees)</td>
+							</tr>
+							<tr>
+								<td>ACOSH(<i>expression</i>)
+								</td>
+								<td>Returns the angle of hyperbolic cosine (in degrees)</td>
+							</tr>
+							<tr>
+								<td>ATANH(<i>expression</i>)
+								</td>
+								<td>Returns the angle of hyperbolic tangens of a value</td>
+							</tr>
+							<tr>
+								<td>RAD(<i>expression</i>)
+								</td>
+								<td>Converts an angle measured in degrees to an
+									approximately equivalent angle measured in radians</td>
+							</tr>
+							<tr>
+								<td>DEG(<i>expression</i>)
+								</td>
+								<td>Converts an angle measured in radians to an
+									approximately equivalent angle measured in degrees</td>
+							</tr>
+							<tr>
+								<td>FACT(<i>expression</i>)
+								</td>
+								<td>Retuns the factorial value of an integer. Will return 1
+									for 0 or a negative number</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table table-striped">
+						<tbody>
+							<tr>
+								<th>Constant</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td>e</td>
+								<td>The value of <i>e</i>, exact to 70 digits
+								</td>
+							</tr>
+							<tr>
+								<td>PI</td>
+								<td>The value of <i>PI</i>, exact to 100 digits
+								</td>
+							</tr>
+							<tr>
+								<td>TRUE</td>
+								<td>The value one</td>
+							</tr>
+							<tr>
+								<td>FALSE</td>
+								<td>The value zero</td>
+							</tr>
+							<tr>
+								<td>NULL</td>
+								<td>The null value</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog"
+		aria-labelledby="aboutModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="aboutModalLabel">About</h3>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<b><p>REMO - Remote Monitoring and Measurement System</p></b>
+					<p>
+						Use the distance measurement sensor the way you would like to. The
+						actual distance you would get from the sensor is stored in the <b><i>raw</i></b>
+						variable.
+					</p>
+					<p>
+						<b>Usage example: </b> If you would like to calculate the
+						percentage of water in a tank. Follow the below steps:
+					</p>
+
+					<ul>
+						<li>Let the breadth of the tank be 100 CM. Let the length of
+							tank be 200 CM. Let the height of the tank be 400 CM.</li>
+						<li>Total volume of the tank is <b>length * breadth *
+								height</b> i.e <b>100*200*400 = 8000000 CM<sup>2</sup></b>.
+						</li>
+						<li>We get the height parameter (<b>raw</b>) from the
+							ultrasonic sensor.
+						<li>To get the total volume of water, use the following
+							formula - <br> <b>[Total volume of tank - Volume of tank
+								measured by the ultrasonic device] </b><br> <b>8000000 -
+								(100*200*raw)</b>
+						</li>
+						<li>To get the percentage of water, use the following
+							formula: <br> <b>[(Volume of water/100)*Total volume of
+								tank] </b><br> <b>((8000000 - (100*200*raw))/100)*8000000</b>
+						</li>
+					</ul>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+				</div>
 			</div>
 		</div>
 	</div>
