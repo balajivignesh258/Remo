@@ -6,7 +6,7 @@ function setConnected(connected) {
 	if (connected) {
 		$("#conversation").show();
 	} else {
-		$("#conversation").hide();
+		//$("#conversation").hide();
 	}
 	$("#greetings").html("");
 }
@@ -32,17 +32,25 @@ function disconnect() {
 }
 
 function sendFormula() {
+	if (stompClient == null)
+		alert('Click on the connect button to connect to server.')
 	stompClient.send("/app/formula", {}, JSON.stringify({
 		'formula' : $("#formula").val()
 	}));
+	$('.alert').text("Formula has been set successfully!");
+	$("#formula").val('');
 	showAlert();
 	setTimeout(hideAlert, 2000)
 }
 
 function sendUnit() {
+	if (stompClient == null)
+		alert('Click on the connect button to connect to server.')
 	stompClient.send("/app/unit", {}, JSON.stringify({
 		'unit' : $("#unitval").val()
 	}));
+	$("#unitval").val('');
+	$('.alert').text("Unit has been appended successfully!");
 	showAlert();
 	setTimeout(hideAlert, 2000)
 }
