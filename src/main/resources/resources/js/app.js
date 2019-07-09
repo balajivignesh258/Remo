@@ -67,8 +67,8 @@ function showEvalResultValue(message) {
 	console.log(message)
 	$("#monitor").empty();
 	$("#monitor").append(
-			"<tr><td><h1><font color='lightgrey'>" + message
-					+ "</font></h1></td></tr>");
+			"<tr><td><h1>" + message
+					+ "</h1></td></tr>");
 	$('#gauge').jqxLinearGauge('value', parseInt(message));
 
 }
@@ -119,7 +119,7 @@ $(document).ready(function() {
 		pointer : {
 			size : '45%'
 		},
-		colorScheme : 'scheme11',
+		colorScheme : 'scheme01',
 		ranges : []
 	});
 
